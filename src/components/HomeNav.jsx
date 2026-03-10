@@ -20,6 +20,12 @@ export const HomeNav = () => {
               <Button colorScheme={"red"}>LOGIN/SIGNUP</Button>
             </Link>
           </div>
+          <div style={{ marginLeft: 8, alignSelf: "center" }}>
+            {/* Admin button navigates to login and will redirect to /admin after successful login */}
+            <Link to={"/login?next=/admin"}>
+              <Button colorScheme={"gray"} variant="outline">ADMIN</Button>
+            </Link>
+          </div>
         </div>
         <div id="homeTxt">
           <p>

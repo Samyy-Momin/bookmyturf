@@ -1,11 +1,9 @@
-import { Input,Button, Divider, AspectRatio } from '@chakra-ui/react'
+import { Input, Button } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import loginBg from "../images/loginBg.png"
 import googleimg from "../images/search.png"
 import "../style/login.css"
-import {createUserWithEmailAndPassword,signInWithPopup} from "firebase/auth"
-import { auth, googleProvider } from '../firebase-config/config'
-import { Link ,useNavigate} from "react-router-dom";
+import { Link ,useNavigate, useLocation } from "react-router-dom";
 import { useUserAuth } from "../context/Authcontext";
 import { Alert } from "@chakra-ui/react";
 
@@ -15,13 +13,17 @@ export const Login = () => {
     const [error,setError] = useState("")
     const {login,googleSignin} = useUserAuth()
     const navigate = useNavigate()
+    const location = useLocation()
 
     // handle sign in 
     const handlesignin = async() => {
       try{
         await login(email,pass)
         alert("Login Successfully")
-        navigate("/turf")
+        // redirect to requested page (e.g. /admin) when provided
+        const params = new URLSearchParams(location.search);
+        const next = params.get("next") || "/turf";
+        navigate(next);
       }catch(err){
         setError(err.message)
       } 
@@ -29,7 +31,9 @@ export const Login = () => {
     const signinWithgoogle = async() => {
       try{
        await googleSignin()
-       navigate("/turf")
+       const params = new URLSearchParams(location.search);
+        const next = params.get("next") || "/turf";
+        navigate(next);
       }catch(err){
         console.log(err)
       }

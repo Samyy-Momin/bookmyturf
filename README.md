@@ -16,11 +16,31 @@ Check out the live demo of the Online Turf Booking App: https://turfz-5834b.web.
 
 ## Features
 
-- View available turfs, their details, and booking slots.
-- User registration and authentication.
-- Book a turf for a specific date and time slot.
-- View and manage your bookings.
 
+<!--
+## Admin Panel
+
+An admin panel is available at `/admin` to add and delete turfs from your Firestore collections (cricket, football, basketball, badminton).
+
+Setup steps:
+
+- Set the admin email in your React env: create a `.env.local` with `REACT_APP_ADMIN_EMAIL=youremail@example.com`.
+- Update `firestore.rules` to replace the placeholder `admin@example.com` with your admin email and deploy the rules (see `scripts/deployFirestoreRules.js`).
+- Sign in to the app with the admin email; the `Admin Panel` link appears in the footer. You can also visit `/admin` directly while signed in.
+
+When signed in as the admin, the panel allows adding a turf (choose sport + details) and deleting turfs. If you run into permission errors, check your Firestore rules and that your user email matches the configured admin email.
+-->
+## Admin Panel
+
+An admin panel is available at `/admin` to add and delete turfs from your Firestore collections (cricket, football, basketball, badminton).
+
+Setup steps:
+
+- Set the admin email in your React env: create a `.env.local` with `REACT_APP_ADMIN_EMAIL=youremail@example.com`.
+- Update `firestore.rules` to replace the placeholder `admin@example.com` with your admin email and deploy the rules (see `scripts/deployFirestoreRules.js`).
+- Sign in to the app with the admin email; the `Admin Panel` link appears in the footer. You can also visit `/admin` directly while signed in.
+
+When signed in as the admin, the panel allows adding a turf (choose sport + details) and deleting turfs. If you run into permission errors, check your Firestore rules and that your user email matches the configured admin email.
 ## Installation
 
 Follow these steps to set up the project on your local machine:
@@ -55,6 +75,8 @@ Follow these steps to set up the project on your local machine:
 
 ## Confirmation received
 <img width="1278" alt="Screenshot 2023-08-30 221940" src="https://github.com/Joel-K-James/Turfz/assets/85893912/b61b59ec-e348-489b-aa92-d062cc386db4">
+
+See ADMIN_SETUP.md for admin troubleshooting.
 
 ## Contributing
 

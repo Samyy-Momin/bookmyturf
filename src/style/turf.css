@@ -6,13 +6,13 @@
     width: 100%;
 }
 #turfNavContainer{
-    position: absolute;
+    position: relative;
     display: grid;
-    gap: 150px;
-    top: 1em;
-    width: 90%;
-    border: 0PX SOLID black;
-    left: 5em;
+    gap: 16px;
+    padding: 28px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
 }
 #navBtns{
     border: 0px solid black;
@@ -33,66 +33,132 @@
 }
 #botNavTurf{
     display: flex;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#botNavTurf select{
+    width: 280px;
+    padding: 10px;
+}
+
+@media (max-width: 720px){
+    #botNavTurf select{ width: 100%; }
+    #botNavText{ width:100%; }
 }
 #botNavText{
     color: white;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     text-transform:uppercase;
     border:0px solid black;
     display: flex;
-    width: 27%;
-    justify-content:space-between;
     align-items: center;
 }
 #midNavTurf{
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
 }
 #turfCity{
-    color: red;
-    display: flex;
-    align-items: center;
+        color: red;
+        display: inline-flex;
+        align-items: center;
+        margin-left: 8px;
+}
+
+.sport-btn{
+    padding: 8px 12px;
+}
+
+@media (max-width: 720px){
+    #midNavTurf{ font-size: 18px; text-align: center; }
+    #turfNavContainer{ padding: 18px 4%; }
+    .sport-btn{ font-size: 14px; }
 }
 #mapContainer{
     border: 1px solid black;
 }
 #mainContainer{
-    background-color: black
+    background-color: #0b0b0b;
 }
-#turfContainer{
-    width: 80%;
-    margin: auto;
-    margin-top: 50px;
-    display: grid;
-    gap: 50px;
-    color: white;
-}
-#turfBox{
-    border: 0px solid white;
-}
-#listingImg{
-    width: 30%;
-}
-#listingImg img{
-    width: 100%;
-}
-#turfName{
-    font-weight:bold;
-    text-transform: uppercase;
+
+/* Heading */
+.heading-turf{
+    font-weight: 700;
     font-size: 20px;
-}
-#headingTurf{
-    font-weight: bold;
-    font-size: 25px;
     text-transform: uppercase;
-    width: 80%;
-    margin: auto;
-    color: white;
-    margin-top: 50px;
+    width: 90%;
+    margin: 28px auto;
+    color: #e5e7eb;
+}
+
+/* Grid container for cards */
+.turf-container{
+    width: 90%;
+    margin: 20px auto 0 auto;
+    padding: 40px 0 80px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    gap: 28px;
+    color: #e5e7eb;
+    align-items: start;
+    min-height: auto;
+}
+
+/* On medium / small screens use single column so cards stack vertically */
+@media (max-width: 900px) {
+  .turf-container{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .turf-container{ padding: 20px 0 40px 0; }
+}
+
+
+.turf-box{
+    background: #111318;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-img{ width:100%; }
+.listing-img img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.turf-card-body{
+    padding: 16px 18px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.turf-name{
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+}
+.turf-address{
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.turf-actions{ margin-top: 8px; }
+
+@media (max-width: 480px){
+  .listing-img img{ height: 180px }
+  .turf-name{ font-size: 16px }
 }
 #timeButtons{
     display: grid;

@@ -1,0 +1,17 @@
+{
+  "users": {
+    "demoUserUid1": {
+      "data": {
+        "booking": {
+          "name": "Greenfield Turf",
+          "address": "123 Turf St, Kottayam",
+          "image": "https://placehold.co/600x400.png?text=Greenfield+Turf"
+        },
+        "time": "7:00 AM",
+        "bookingDate": "2025-12-01",
+        "uid": "demoUserUid1",
+        "email": "user1@example.com"
+      }
+    }
+  }
+}

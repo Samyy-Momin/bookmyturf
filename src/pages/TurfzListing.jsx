@@ -7,13 +7,14 @@ import { Footer } from "../components/Footer";
 
 
 export const TurfzListing = () => {
-  const [turf, setTurf] = useState("football");
+  const [turf, setTurf] = useState("All");
+  const [city, setCity] = useState("All");
 
   return (
     <div id="mainContainer">
-      <TurfNav setTurf={setTurf} />
+      <TurfNav setTurf={setTurf} onCityChange={setCity} city={city} />
       {/* <MapContainer/> */}
-      <Turfdata turf={turf}/>
+      <Turfdata turf={turf} city={city} />
       <Footer />
     </div>
   );

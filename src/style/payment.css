@@ -1,52 +1,64 @@
+/* Cleaner, modern payment page styles */
 #paymentNav{
-    border: 0px solid black;
-    color: white;
-    background-color: black;
-    height: 100px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: transparent;
+    box-shadow: none;
 }
+#paymentNav a{ color: inherit; }
 #BookedTurfName{
-    font-weight: bold;
-    font-size: 30px;
-    color: red;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1f2937;
+    margin-left: 12px;
 }
 #paymentContainerBox{
-    background-image: url(../images/paymentBg.png);
-    background-size:90% 100vh;
-    height: 100vh;
-    margin-top: 20px;
-    border: 0px solid black;
+    min-height: calc(100vh - 64px);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 48px 16px;
+    background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
 }
 #paymentMode{
-    border: 0px solid blue;
-    width: 25%;
+    width: 380px;
+    max-width: 94%;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    height: 400px;
-    background-color: #a88787;
-    opacity: 90%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    font-weight: bold;
+    gap: 12px;
+    background: #ffffff;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-radius: 12px;
+    font-weight: 500;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(17,24,39,0.06);
 }
-#bookingsDetails{
-    width: 50%;
-    margin: auto;
-    font-size:25px;
-    font-weight: bold;
+.payment-header{
+    text-align: center;
+    margin-bottom: 6px;
 }
-#bookingImageBox{
-    border: 1px solid red;
-    width: 70%;
+.payment-amount{
+    text-align: center;
+    color: #374151;
+    font-weight: 600;
 }
-#bookingImageBox img{
-    width: 100%;
+.testCardBox{
+    background: #f1f8ff;
+    border-left: 4px solid #2b6cb0;
+    padding: 12px;
+    border-radius: 6px;
+    color: #1e3a8a;
+    font-size: 13px;
+}
+.payment-methods{ display:flex; flex-direction:column; gap:8px; }
+.chakra-button{ width:100%; }
+
+/* Mobile tweaks */
+@media (max-width: 480px){
+    #BookedTurfName{ font-size:16px }
+    #paymentMode{ width: 92%; padding:16px }
 }

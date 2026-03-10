@@ -8,14 +8,13 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   Button,
-  Text,
 } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const PopoverProfile = (prop) => {
   
-  const { name, email, handleLogout, image } = prop;
+  const { email, handleLogout } = prop;
 
   const navigate = useNavigate();
 
@@ -40,6 +39,7 @@ export const PopoverProfile = (prop) => {
           >
             Bookings
           </Button>
+          <Button colorScheme={"red"} width="100%" onClick={() => navigate("/change-password")}>Change Password</Button>
           <Button colorScheme={"red"} onClick={handleLogout}>
             Logout
           </Button>
